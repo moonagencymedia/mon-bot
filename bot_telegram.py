@@ -14,7 +14,9 @@ MESSAGE_TEXT = (
 "Hey ! 🍓\n"
 "Bienvenue sur mon canal Telegram ! 💫\n\n"
 "Petite surprise : ma fille Kimi vient de lancer son Instagram 👀\n"
-"Elle a 18 ans et elle débute, allez lui faire un petit coucou 💗"
+"Elle a 18 ans et elle débute, allez lui faire un petit coucou 💗\n\n"
+"Envoie moi un message sur telegram pour me dire que tu t'es abonné "
+"et je t'enverrais une surprise 💗"
 )
 # ============================================================
 
