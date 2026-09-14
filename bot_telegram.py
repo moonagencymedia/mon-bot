@@ -8,26 +8,21 @@ from telegram.ext import Application, ChatJoinRequestHandler, CommandHandler, Co
 # ============================================================
 BOT_TOKEN   = "8173722979:AAETC142G8kuazugxF3T6ef2fsTcspKimlA"
 PHOTO_PATH  = "photo.jpeg"   # place la photo dans le même dossier que ce script
-INSTAGRAM_URL = "https://www.instagram.com/sasatacrush/"
+INSTAGRAM_URL = "https://www.instagram.com/kimi_tanakaa/"
 
 MESSAGE_TEXT = (
-    "Hey !  🍓\n"
-    "Bienvenue sur mon canal telegram ! 💫\n\n"
-    "Pour te remercier je te partage mon insta privé que j'utilise tout les jours. "
-    "C'est vraiment pour les intimes ahah\n\n"
-    "Envoie moi un message sur telegram pour me dire que tu t'es abonné "
-    "et je t'enverrais une surprise 💗\n\n"
-    "A tout de suite !"
+"Hey ! 🍓\n"
+"Bienvenue sur mon canal Telegram ! 💫\n\n"
+"Petite surprise : ma fille Kimi vient de lancer son Instagram 👀\n"
+"Elle a 18 ans et elle débute, allez lui faire un petit coucou 💗"
 )
 # ============================================================
 
 logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    level=logging.INFO
+format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+level=logging.INFO
 )
 logger = logging.getLogger(__name__)
-
-
 async def handle_join_request(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Déclenché à chaque demande d'accès au canal privé."""
     join_request = update.chat_join_request
@@ -38,7 +33,7 @@ async def handle_join_request(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     # Bouton cliquable vers Instagram
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("👉 Mon Instagram privé 🍓", url=INSTAGRAM_URL)]
+        [InlineKeyboardButton("👉 L'Instagram de Kimi 🍓", url=INSTAGRAM_URL)]
     ])
 
     try:
@@ -56,11 +51,8 @@ async def handle_join_request(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     # Approbation manuelle — rien à faire ici
 
-
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Bot actif ✅ — en attente des demandes d'accès au canal.")
-
-
 def main():
     app = Application.builder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
@@ -68,7 +60,6 @@ def main():
 
     logger.info("Bot démarré — en écoute...")
     app.run_polling(allowed_updates=Update.ALL_TYPES)
-
 
 if __name__ == "__main__":
     main()
