@@ -9,6 +9,7 @@ from telegram.ext import Application, ChatJoinRequestHandler, CommandHandler, Co
 BOT_TOKEN   = "8173722979:AAETC142G8kuazugxF3T6ef2fsTcspKimlA"
 PHOTO_PATH  = "photo.jpeg"   # place la photo dans le même dossier que ce script
 INSTAGRAM_URL = "https://www.instagram.com/kimi_tanakaa/"
+TELEGRAM_DM_URL = "https://t.me/meitanakaa"
 
 MESSAGE_TEXT = (
 "Hey ! 🍓\n"
@@ -35,7 +36,8 @@ async def handle_join_request(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     # Bouton cliquable vers Instagram
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("👉 L'Instagram de Kimi 🍓", url=INSTAGRAM_URL)]
+                [InlineKeyboardButton("👉 L'Instagram de Kimi 🍓", url=INSTAGRAM_URL)],
+        [InlineKeyboardButton("💬 M'écrire ici 💗", url=TELEGRAM_DM_URL)]
     ])
 
     try:
